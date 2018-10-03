@@ -4,11 +4,8 @@ var googleMapsClient = require('@google/maps').createClient({
 
 const https = require('https');
 const request = require('request')
-
-
 var jso;
-const start = 'DisneyLand, CA';
-const end = 'Universal Studios Hollywood'
+
 
 
 /**
@@ -90,7 +87,6 @@ exports.retrieve_weather = function retrieve_weather(lat, lon, callback){
             callback(null, post)
         }
     });
-
 
 
 }

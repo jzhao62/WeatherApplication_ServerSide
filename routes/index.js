@@ -51,27 +51,12 @@ router.post('/handle_input', function(req, res) {
     console.log(n + " " + x + " received");
     console.log('handle userinput Triggered')
 
-
-    main_api.Query_Direction(n, x, new Date().toLocaleDateString("en-US", options), function(err, ret){
-        if(err) console.log(err);
-        if(ret.length == 0){
-            console.log('Cannot find Direction, go retrieve');
-            main_api.store_data(n, x,function(err, ret){
-                if(err) console.log('ERROR is callback when retrieve_and_query')
-
-                console.log(ret + " at router")
-                res.json(ret)
-            })
-
-        }
-
-        else{
-            console.log("Data already there")
-            res.json(ret);
-
-
-        }
+    main_api.store_data(n, x,function(err, ret){
+        console.log("result proped at router")
+        res.json(ret)
     })
+
+
 
 
 });
