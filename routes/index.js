@@ -7,13 +7,7 @@ var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' 
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-
-    main_api.show_all_data(function(err, feedback){
-        if(err) return err;
-        res.json(feedback)
-    })
-
-
+   res.render('')
 });
 
 
